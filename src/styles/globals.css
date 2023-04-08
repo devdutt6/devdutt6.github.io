@@ -14,9 +14,27 @@
 
 .cursor {
   position: absolute;
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   transform: translateX(-50%) translateY(-50%);
   background-color: #2cb67d;
+  animation: reduce 300ms ease-out;
+}
+
+@keyframes reduce {
+  from {
+    width: 12px;
+    height: 12px;
+    /* background-color: aliceblue; */
+  }
+  50% {
+    width: 7px;
+    height: 7px;
+    /* background-color: blue; */
+  }
+  to {
+    width: 0px;
+    height: 0px;
+  }
 }

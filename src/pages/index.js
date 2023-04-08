@@ -10,18 +10,13 @@ export default function Home() {
   useEffect(() => {
     const followCursor = (x, y) => {
       const mainscreen = document.querySelector(`.${styles.main}`);
-      // setTimeout(() => {
-        mainscreen.childNodes.forEach((child) => {
-          if(child.className === "cursor") child.remove();
-        })
-      // }, 80);
       const pointer = document.createElement('div');
       pointer.className = "cursor";
       pointer.style.left = `${x}px`;
       pointer.style.top = `${y}px`;
       mainscreen.appendChild(pointer);
+      setTimeout(() => mainscreen.removeChild(pointer), 200);
     }
-
     window.onmousemove = e => followCursor(e.clientX, e.clientY);
   }, [])
   return (
