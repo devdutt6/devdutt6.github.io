@@ -1,10 +1,10 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import { Ubuntu_Mono } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import { useEffect } from 'react'
+import Input from '@/components/Input'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Ubuntu_Mono({ subsets: ['latin'], style: 'normal', weight: "400" })
 
 export default function Home() {
   useEffect(() => {
@@ -29,9 +29,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon_svg.svg" />
       </Head>
-      <main className={styles.main}>
-
-      </main>
+      <div className={`${styles.main} ${inter.className}`}>
+        <main>
+          <Input />
+        </main>
+      </div>
     </>
   )
 }
