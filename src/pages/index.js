@@ -1,10 +1,8 @@
 import Head from 'next/head'
-import { Ubuntu_Mono } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import { useEffect } from 'react'
 import Input from '@/components/Input'
-
-const inter = Ubuntu_Mono({ subsets: ['latin'], style: 'normal', weight: "400" })
+import Welcome from '@/components/Welcome'
 
 export default function Home() {
   useEffect(() => {
@@ -29,9 +27,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon_svg.svg" />
       </Head>
-      <div className={`${styles.main} ${inter.className}`}>
+      <div className={styles.main}>
         <main>
           <Input />
+          <Welcome />
         </main>
       </div>
     </>

@@ -4,6 +4,11 @@
   --para-text: #94a1b2;
   --card-back: #242629;
   --tag-high: #7f5af0;
+  --cursor-color: #2cb67d;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 * {
@@ -20,7 +25,7 @@
   height: 12px;
   border-radius: 50%;
   transform: translateX(-50%) translateY(-50%);
-  background-color: #2cb67d;
+  background-color: var(--cursor-color);
   animation: reduce 300ms ease-out;
 }
 

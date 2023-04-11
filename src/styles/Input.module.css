@@ -1,6 +1,6 @@
 .card {
   width: 100%;
-  color: var(--para-text);
+  color: var(--title-main);
   background-color: var(--background-dark);
   height: 30px;
   display: flex;
@@ -30,5 +30,5 @@
 }
 
 .green {
-  color:rgb(13, 150, 70);
+  color: var(--cursor-color)
 }
