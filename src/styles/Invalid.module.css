@@ -4,3 +4,31 @@
   width: 100%;
   height: fit-content;
 }
+.padded {
+  font-size: 1.2em;
+  color: var(--title-main);
+  width: 100%;
+  height: fit-content;
+  margin: 4px 0px;
+}
+
+.green {
+  color: var(--cursor-color);
+}
+
+.group {
+  padding: 8px 0px;
+  width: 50%;
+}
+
+.divide {
+  display: flex;
+  padding: 2px 0px;
+  justify-content: space-between;
+}
+
+.title {
+  font-weight: 800;
+  /* padding: 2px 0px; */
+}
+

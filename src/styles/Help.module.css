@@ -1,0 +1,18 @@
+.list {
+  width: 100%;
+  font-size: 1.2em;
+  color: var(--title-main);
+}
+
+.padd {
+  padding: 2px 0px;
+}
+
+.green {
+  color: var(--cursor-color);
+  display: inline;
+}
+.normal {
+  color: var(--title-main);
+  display: inline;
+}
