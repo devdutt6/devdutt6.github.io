@@ -1,4 +1,5 @@
 import styles from "@/styles/Welcome.module.css";
+import Input from "./Input";
 
 const Welcome = () => {
   const NAME = `
@@ -31,6 +32,7 @@ const Welcome = () => {
          `;
 
   return (<>
+  <br/>
   <div className={styles.pre}>
     <div>
       <pre>
@@ -48,7 +50,6 @@ const Welcome = () => {
       <p className={styles.line}>
         For the list of available commands, type `<span className={styles.green}>help</span>`.
       </p>
-      <br/>
     </div>
     <div className={styles.photo}>
       <pre>
@@ -56,6 +57,8 @@ const Welcome = () => {
       </pre>
     </div>
   </div>
+  <br/>
+  <Input />
   </>)
 }
 

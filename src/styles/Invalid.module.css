@@ -1,0 +1,6 @@
+.section {
+  font-size: 1.2em;
+  color: var(--title-main);
+  width: 100%;
+  height: fit-content;
+}
