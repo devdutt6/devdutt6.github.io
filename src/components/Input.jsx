@@ -9,30 +9,45 @@ const Input = () => {
   const reference = useRef()
   const [submitted, setSubmitted] = useState(false)
   const [input, setInput] = useState("")
-  const [index, setIndex] = useState(-1)
+  const [index, setIndex] = useState(0)
   const { components, setComponents } = useContext(ComponentContext)
   const { history, setHistory } = useContext(HistoryContext)
 
   const handelArrow = (e) => {
     if(e.key === "ArrowUp"){
-      setIndex(index+1);
-      setInput(history[history.length-1-(index+1)]);
+      setIndex(ind => {
+        if(ind > history.length-1) return ind = history.length
+        else return ind+1
+      });
+      console.log(history, index)
+      index < history.length ? setInput(history[history.length-index-1]) : setInput("")
+    }
+    if(e.key === "ArrowDown"){
+      setIndex(ind => {
+        if(ind <= 0) return ind = -1
+        else return ind-1
+      });
+      console.log(history, index-1)
+      index >= 0 ? setInput(history[history.length-index-1]) : setInput("")
     }
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setHistory(history => [...history, input]);
+    setHistory(hist => [...hist, input]);
     setSubmitted(true)
-    reference.current.removeEventListener('keydown', handelArrow);
     setComponents([...components, componentMaper(input)])
   }
   const handelChange = (e) => setInput(e.target.value)
 
   useEffect(() => {
-    reference.current.focus(),
-    reference.current.addEventListener('keydown', handelArrow);
-  }, [])
+    reference.current.addEventListener('keydown', handelArrow)
+    reference.current.focus()
+
+    return () => {
+      reference.current.removeEventListener('keydown', handelArrow)
+    }
+  }, [index])
 
   return (
     <div className={styles.card}>

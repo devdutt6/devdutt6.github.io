@@ -29,9 +29,9 @@ const Social = () => {
             return (
               <li className={styles.item}>
                 {index+1}.&nbsp;
-                <a href={account.link} target="__blank" className={styles.nodecoration}><span className={styles.green}>{account.platform}</span></a>
+                <a href={account.link} target="_blank" className={styles.nodecoration}><span className={styles.green}>{account.platform}</span></a>
                 {generateSpaces(account.tabs)}-&nbsp;
-                <a href={account.link} className={styles.nodecoration} target="__blank">
+                <a href={account.link} className={styles.nodecoration} target="_blank">
                   {account.link}
                 </a>
               </li>
