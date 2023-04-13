@@ -1,11 +1,11 @@
 .section {
-  font-size: 1.2em;
+  font-size: 1.1em;
   color: var(--title-main);
   width: 100%;
   height: fit-content;
 }
 .padded {
-  font-size: 1.2em;
+  font-size: 1.1em;
   color: var(--title-main);
   width: 100%;
   height: fit-content;

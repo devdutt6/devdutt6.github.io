@@ -1,20 +1,22 @@
 import Welcome from '@/components/Welcome';
 import Invalid from '@/components/Invalid';
 import Echo from '@/components/Echo';
-import Extra from '@/components/Extra';
+import Clear from '@/components/Clear';
 import Pwd from '@/components/Pwd';
 import Education from '@/components/Education';
 import Help from '@/components/Help';
 import About from '@/components/About';
+import Social from '@/components/Social';
 
 const componentMapping = {
   welcome: <Welcome />,
-  clear: <Extra />,
+  clear: <Clear />,
   pwd:  <Pwd />,
   education: <Education />,
   help: <Help />,
   whoami: <Echo text='visitor'/>,
-  about: <About />
+  about: <About />,
+  socials: <Social />,
 }
 
 const componentMaper = (textInput) => {

@@ -10,18 +10,22 @@ export default function Home() {
   const [components, setComponents] = useState([]);
   const [history, setHistory] = useState([]);
 
-  // useEffect(() => {
-  //     const followCursor = (x, y) => {
-  //     const mainscreen = document.querySelector(`.${styles.main}`);
-  //     const pointer = document.createElement('div');
-  //     pointer.className = "cursor";
-  //     pointer.style.left = `${x}px`;
-  //     pointer.style.top = `${y}px`;
-  //     mainscreen.appendChild(pointer);
-  //     setTimeout(() => mainscreen.removeChild(pointer), 200);
-  //   }
-  //   window.onmousemove = e => followCursor(e.clientX, e.clientY);
-  // }, [])
+  useEffect(() => {
+    //   const followCursor = (x, y) => {
+    //   const mainscreen = document.querySelector(`.${styles.main}`);
+    //   const pointer = document.createElement('div');
+    //   pointer.className = "cursor";
+    //   pointer.style.left = `${x}px`;
+    //   pointer.style.top = `${y}px`;
+    //   mainscreen.appendChild(pointer);
+    //   setTimeout(() => mainscreen.removeChild(pointer), 200);
+    // }
+    // window.onmousemove = e => followCursor(e.clientX, e.clientY);
+  window.addEventListener('mouseup', () => {
+    const inputs = document.querySelectorAll('input')
+    inputs[inputs.length-2].focus()
+  })
+  }, [])
 
   return (
     <>
@@ -49,7 +53,7 @@ export default function Home() {
               }
             </main>
           </div>
-      </ComponentContext.Provider>
+        </ComponentContext.Provider>
       </HistoryContext.Provider>
     </>
   )
