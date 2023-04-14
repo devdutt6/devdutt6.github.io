@@ -7,6 +7,7 @@ import Education from '@/components/Education';
 import Help from '@/components/Help';
 import About from '@/components/About';
 import Social from '@/components/Social';
+import Projects from '@/components/Projects';
 
 const componentMapping = {
   welcome: <Welcome />,
@@ -17,6 +18,7 @@ const componentMapping = {
   whoami: <Echo text='visitor'/>,
   about: <About />,
   socials: <Social />,
+  projects: <Projects />
 }
 
 const componentMaper = (textInput) => {

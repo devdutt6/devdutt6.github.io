@@ -4,8 +4,8 @@ import styles from "@/styles/Invalid.module.css";
 const Education = () => {
   const education = [
     {
-      title: "Bachelors of Computer Engineering",
-      description: "Gujarat University",
+      title: "Bachelors of Engineering in Computer Science",
+      description: "Gujarat Technological University",
       duration: "2018 ~ 2022",
       grade: "8.7/10.0"
     }

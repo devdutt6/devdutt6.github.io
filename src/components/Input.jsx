@@ -16,7 +16,7 @@ const Input = () => {
   const handelArrow = (e) => {
     if(e.key === "ArrowUp"){
       setIndex(ind => {
-        if(ind > history.length-1) return ind = history.length
+        if(ind >= history.length-1) return ind = history.length-1
         else return ind+1
       });
       console.log(history, index)

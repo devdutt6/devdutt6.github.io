@@ -27,6 +27,7 @@ export default function Home() {
   })
   }, [])
 
+  // TODO: resume, workexp, welcome fullsatck, welcome static first time, tab thing complette, alt+l, extra command remove
   return (
     <>
       <Head>

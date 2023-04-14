@@ -1,0 +1,39 @@
+.section {
+  width: 60%;
+  color: var(--title-main);
+  padding: 8px 0px;
+  font-size: 1.1em;
+}
+
+.card {
+  padding: 4px 0px;
+  width: 100%;
+}
+
+.title {
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--cursor-color);
+  padding: 0px 0px 4px;
+}
+
+.description {
+  padding: 0px 0px 4px;
+}
+
+.title::after {
+  content: ":";
+}
+
+.nodecoration {
+  text-decoration: none;
+  color: var(--tag-high);
+}
+
+.flexit {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  padding: 4px 0px;
+}
