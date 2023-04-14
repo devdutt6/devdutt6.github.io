@@ -1,41 +1,61 @@
 import styles from "@/styles/Input.module.css"
 import componentMaper from "@/utils/componentMap"
 import { useContext, useEffect, useState, useRef } from "react"
-import { ComponentContext, HistoryContext } from '../pages/index'
+import { ComponentContext } from '../pages/index'
 
-const Input = () => {
+const LabelLine = () => {
   const USER = "visitor"
   const DOMAIN = "terminal.devdutt.dev"
+
+  return (
+    <>
+      <span className={styles.orange}>
+        {USER}
+      </span>
+      @
+      <span className={styles.green}>
+        {DOMAIN}
+      </span>
+      :~$&nbsp;
+    </>
+  )
+}
+
+const Form = ({ defaultValue="", defaultState=false }) => {
+  const { components, setComponents, history, setHistory } = useContext(ComponentContext)
   const reference = useRef()
-  const [submitted, setSubmitted] = useState(false)
-  const [input, setInput] = useState("");
+  const [submitted, setSubmitted] = useState(defaultState)
+  let [input, setInput] = useState(defaultValue)
   const [index, setIndex] = useState(0)
-  const { components, setComponents } = useContext(ComponentContext)
-  const { history, setHistory } = useContext(HistoryContext)
 
   const handelArrow = (e) => {
-    if(e.key === "ArrowUp"){
-      setIndex(ind => {
-        if(ind >= history.length-1) return ind = history.length-1
-        else return ind+1
-      });
-      index < history.length ? setInput(history[history.length-index-1]) : setInput("")
-    }
-    if(e.key === "ArrowDown"){
-      setIndex(ind => {
-        if(ind <= 0) return ind = -1
-        else return ind-1
-      });
-      index >= 0 ? setInput(history[history.length-index-1]) : setInput("")
+    if(e.key === "ArrowUp" || e.key === "ArrowDown"){
+      e.preventDefault()
+      if(e.key === "ArrowDown"){
+        setIndex(ind => {
+          if(ind == 0) return ind = 0
+          else return ind-1
+        })
+      }
+      else{
+        setIndex(ind => {
+          if(ind == history.length-1) return ind = history.length-1
+          else return ind+1
+        })
+      }
+      setInput(history[history.length-index-1])
     }
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setHistory(hist => [...hist, input]);
+    input = input.trim()
+    if (input.length == 0) return
+    setHistory(hist => [...hist, input])
     setSubmitted(true)
     setComponents([...components, componentMaper(input)])
   }
+
   const handelChange = (e) => setInput(e.target.value)
 
   useEffect(() => {
@@ -48,32 +68,34 @@ const Input = () => {
   }, [index])
 
   return (
-    <div className={styles.card}>
-      <>
-        <span className={styles.orange}>{USER}</span>
-        @<span className={styles.green}>{DOMAIN}</span>
-        :~$&nbsp;
-      </>
-      <div className={styles.form}>
-        <form
-        onSubmit={handleSubmit}
-        autoComplete="off"
-        className={styles.form}>
-          <input
-          type="text"
-          className={styles.input}
-          value={input}
-          onChange={handelChange}
-          ref={reference}
-          disabled={submitted}/>
-          <input
-          type="submit"
-          value="submit"
-          className={styles.display}/>
-        </form>
-      </div>
+    <div className={styles.form}>
+      <form
+      onSubmit={handleSubmit}
+      autoComplete="off"
+      className={styles.form}>
+        <input
+        type="text"
+        className={styles.input}
+        value={input}
+        onChange={handelChange}
+        ref={reference}
+        disabled={submitted} />
+        <input
+        type="submit"
+        value="submit"
+        className={styles.display} />
+      </form>
     </div>
   )
 }
 
-export default Input;
+const Input = ({defaultValue, defaultState}) => {
+  return (
+    <div className={styles.card}>
+      <LabelLine />
+      <Form defaultValue={defaultValue} defaultState={defaultState} />
+    </div>
+  )
+}
+
+export default Input

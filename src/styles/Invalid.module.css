@@ -28,7 +28,8 @@
 }
 
 .title {
-  font-weight: 800;
+  font-weight: 700;
+  color: var(--tag-high);
   /* padding: 2px 0px; */
 }
 
