@@ -1,14 +1,15 @@
 import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
-import React, { useEffect, useState, useContext, createContext } from 'react'
+import StaticInput from '@/components/StaticInput'
 import Input from '@/components/Input'
+import React, { useEffect, useState, useContext, createContext } from 'react'
 
 export const ComponentContext = createContext();
 export const HistoryContext = createContext();
 
 export default function Home() {
   const [components, setComponents] = useState([]);
-  const [history, setHistory] = useState([]);
+  const [history, setHistory] = useState(['welcome']);
 
   useEffect(() => {
     //   const followCursor = (x, y) => {
@@ -24,6 +25,20 @@ export default function Home() {
   window.addEventListener('mouseup', () => {
     const inputs = document.querySelectorAll('input')
     inputs[inputs.length-2].focus()
+  })
+  window.addEventListener('keydown', (e) => {
+    if((e.ctrlKey || e.metaKey) && e.code === "KeyL") {
+      e.preventDefault();
+      const main = document.querySelector('main');
+      const childNodes = main.childNodes;
+      const childNodesL = childNodes.length;
+      // console.log(childNodesL);
+      // console.log(childNodes);
+      for(let i=0;i<childNodesL-1;i++){
+        // console.log(main.childNodes.length);
+        main.removeChild(main.childNodes[0]);
+      }
+    }
   })
   }, [])
 
@@ -42,7 +57,8 @@ export default function Home() {
         <ComponentContext.Provider value={{components, setComponents}}>
           <div className={styles.main}>
             <main>
-              <Input />
+              <StaticInput />
+              {/* <Input /> */}
               {
                 components.map((component, index) => {
                   return (

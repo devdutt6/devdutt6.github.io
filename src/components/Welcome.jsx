@@ -46,6 +46,9 @@ const Welcome = () => {
       <p className={styles.line}>
         ----
       </p>
+      <p className={styles.line}>
+        Hi, I'm full-stack/MERN stack developer.
+      </p>
       <br/>
       <p className={styles.line}>
         For the list of available commands, type `<span className={styles.green}>help</span>`.

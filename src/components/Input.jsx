@@ -8,7 +8,7 @@ const Input = () => {
   const DOMAIN = "terminal.devdutt.dev"
   const reference = useRef()
   const [submitted, setSubmitted] = useState(false)
-  const [input, setInput] = useState("")
+  const [input, setInput] = useState("");
   const [index, setIndex] = useState(0)
   const { components, setComponents } = useContext(ComponentContext)
   const { history, setHistory } = useContext(HistoryContext)
@@ -19,7 +19,6 @@ const Input = () => {
         if(ind >= history.length-1) return ind = history.length-1
         else return ind+1
       });
-      console.log(history, index)
       index < history.length ? setInput(history[history.length-index-1]) : setInput("")
     }
     if(e.key === "ArrowDown"){
@@ -27,7 +26,6 @@ const Input = () => {
         if(ind <= 0) return ind = -1
         else return ind-1
       });
-      console.log(history, index-1)
       index >= 0 ? setInput(history[history.length-index-1]) : setInput("")
     }
   }
@@ -45,7 +43,7 @@ const Input = () => {
     reference.current.focus()
 
     return () => {
-      reference.current.removeEventListener('keydown', handelArrow)
+      reference.current?.removeEventListener('keydown', handelArrow)
     }
   }, [index])
 
