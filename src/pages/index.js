@@ -16,14 +16,21 @@ export default function Home() {
     window.addEventListener('keydown', (e) => ctrlL(e))
   }, [])
 
-  // TODO: resume, workexp, welcome fullsatck, welcome static first time, tab thing complette, alt+l, extra command remove
+  // TODO: resume, workexp, tab thing complette, extra command remove
   return (
     <>
       <Head>
-        <title>Devdutt's Portfolio</title>
-        <meta name="description" content="Devduttsinh chudasama's portfolio" />
-        <meta name="description" content="Devdutt's portfolio" />
-        <meta name="description" content="Chudasama's portfolio" />
+        <title>Devdutt Chudasama | Terminal Portfolio</title>
+        <meta name="title" content="Devdutt Chudasama - Terminal Portfolio" />
+        <meta name="description" content="I am Devdutt Chudasama a Software Developer and this is my terminal portfolio, I mostly work on MERN stack." />
+        {/*  and when i feel bored i prefer to learn something. */}
+        <meta name="keywords" content="devdutt, devduttsinh, devduttchudasama, chudasama, portfolio, terminal, terminal portfolio, devdutt portfolio" />
+        <meta name='robots' content='index/follow' />
+        <meta property="og:title" content="Devdutt terminal portfolio" />
+        <meta property="og:description" content="devdutt's terminal portfolio" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://devdutt6-github-io.vercel.app/" />
+        <meta property="og:image" content="https://cdn.discordapp.com/attachments/973468331610894337/1096685251864047656/Screenshot_9.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.svg" />
       </Head>

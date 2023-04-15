@@ -19,6 +19,12 @@
   font-family: 'Ubuntu Mono', monospace;
 }
 
+h1, h2 {
+  font-size: 1em;
+  font-weight: normal;
+  text-decoration: none;
+}
+
 .cursor {
   position: absolute;
   width: 12px;

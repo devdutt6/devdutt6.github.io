@@ -1,5 +1,3 @@
-export default function () {};
-
 export const followCursor = (x, y, className) => {
   const mainscreen = document.querySelector(`.${className}`);
   const pointer = document.createElement('div');
