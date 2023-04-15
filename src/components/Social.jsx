@@ -1,4 +1,3 @@
-import styles from "@/styles/Social.module.css"
 import { generateSpaces } from "@/utils/functions"
 
 const Social = () => {
@@ -21,20 +20,39 @@ const Social = () => {
     },
   ]
 
+  const styles = {
+    section: {
+      width: "100%",
+      padding: "8px 0px",
+    },
+    item: {
+      padding: "4px 0px",
+      fontSize: '1.1em',
+    },
+    green: {
+      color: 'var(--cursor-color)'
+    },
+    nodecoration: {
+      textDecoration : 'none',
+      fontSize: 'inherit',
+      color: 'var(--tag-high)'
+    }
+  }
+
   return (
-      <ul className={styles.list}>
+      <ul style={styles.section}>
         {
           accounts.map((account, index) => {
             return (
               <li
               key={index}
-              className={styles.item}>
+              style={styles.item}>
                 {index+1}.&nbsp;
                 <a
                 href={account.link}
                 target="_blank"
-                className={styles.nodecoration}>
-                  <span className={styles.green}>
+                style={styles.nodecoration}>
+                  <span style={styles.green}>
                     {account.platform}
                   </span>
                 {generateSpaces(account.tabs)}-&nbsp;

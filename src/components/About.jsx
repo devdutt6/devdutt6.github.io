@@ -1,5 +1,3 @@
-import styles from "@/styles/About.module.css"
-
 const About = () => {
 
   const LINES = [
@@ -17,12 +15,23 @@ const About = () => {
     },
   ]
 
+  const styles = {
+    line: {
+      padding: "8px 0px",
+    },
+    section: {
+      width: "100%",
+      fontSize: "1.1em",
+      color: "var(--title-main)"
+    }
+  }
+
   return (
-    <div className={styles.section}>
+    <div style={styles.section}>
       {
         LINES.map((line, index) => {
           return (
-            <p key={index} className={styles.line}>
+            <p key={index} style={styles.line}>
               {line.line}
             </p>
           )

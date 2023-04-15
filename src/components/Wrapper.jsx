@@ -4,9 +4,9 @@ const Wrapper = ({component}) => {
   return (
     <>
       {component}
-      <Input />
+      <Input idLabel={Math.round(Math.random()*1000)} />
     </>
   )
 }
 
-export default Wrapper;
+export default Wrapper

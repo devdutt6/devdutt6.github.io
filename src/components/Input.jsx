@@ -1,27 +1,35 @@
-import styles from "@/styles/Input.module.css"
-import componentMaper from "@/utils/componentMap"
-import { useContext, useEffect, useState, useRef } from "react"
+import componentMaper from '@/utils/componentMap'
+import { useContext, useEffect, useState, useRef } from 'react'
 import { ComponentContext } from '../pages/index'
 
-const LabelLine = () => {
-  const USER = "visitor"
-  const DOMAIN = "terminal.devdutt.dev"
+const LabelLine = ({idLabel}) => {
+  const USER = 'visitor'
+  const DOMAIN = 'terminal.devdutt.dev'
+
+  const styles = {
+    orange: {
+      color: 'rgb(199, 152, 33)'
+    },
+    green: {
+      color: 'var(--cursor-color)'
+    }
+  }
 
   return (
-    <>
-      <span className={styles.orange}>
+    <label htmlFor={idLabel}>
+      <span style={styles.orange}>
         {USER}
       </span>
       @
-      <span className={styles.green}>
+      <span style={styles.green}>
         {DOMAIN}
       </span>
       :~$&nbsp;
-    </>
+    </label>
   )
 }
 
-const Form = ({ defaultValue="", defaultState=false }) => {
+const Form = ({ defaultValue='', defaultState=false, idLabel }) => {
   const { components, setComponents, history, setHistory } = useContext(ComponentContext)
   const reference = useRef()
   const [submitted, setSubmitted] = useState(defaultState)
@@ -29,9 +37,9 @@ const Form = ({ defaultValue="", defaultState=false }) => {
   const [index, setIndex] = useState(0)
 
   const handelArrow = (e) => {
-    if(e.key === "ArrowUp" || e.key === "ArrowDown"){
+    if(e.key === 'ArrowUp' || e.key === 'ArrowDown'){
       e.preventDefault()
-      if(e.key === "ArrowDown"){
+      if(e.key === 'ArrowDown'){
         setIndex(ind => {
           if(ind == 0) return ind = 0
           else return ind-1
@@ -67,33 +75,63 @@ const Form = ({ defaultValue="", defaultState=false }) => {
     }
   }, [index])
 
+  const styles = {
+    form: {
+      width: '100%',
+      height: '100%',
+    },
+    input: {
+      border: 'none',
+      backgroundColor: 'var(--background-dark)',
+      display: 'flex',
+      width: '100%',
+      height: '100%',
+      // color: 'var(--title-main)',
+      fontSize: '1em',
+      outline: 'none',
+    },
+    display: {
+      display: 'none',
+      height: '0',
+    }
+  }
+
   return (
-    <div className={styles.form}>
+    <div style={styles.form}>
       <form
       onSubmit={handleSubmit}
-      autoComplete="off"
-      className={styles.form}>
+      autoComplete='off'
+      style={styles.form}>
         <input
-        type="text"
-        className={styles.input}
+        type='text'
+        id={idLabel}
+        style={styles.input}
         value={input}
         onChange={handelChange}
         ref={reference}
         disabled={submitted} />
         <input
-        type="submit"
-        value="submit"
-        className={styles.display} />
+        type='submit'
+        value='submit'
+        style={styles.display} />
       </form>
     </div>
   )
 }
 
-const Input = ({defaultValue, defaultState}) => {
+const Input = ({defaultValue, defaultState, idLabel}) => {
+
+  const styles = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontSize: '1.1em',
+  }
+
   return (
-    <div className={styles.card}>
-      <LabelLine />
-      <Form defaultValue={defaultValue} defaultState={defaultState} />
+    <div style={styles}>
+      <LabelLine idLabel={idLabel} />
+      <Form defaultValue={defaultValue} defaultState={defaultState} idLabel={idLabel} />
     </div>
   )
 }

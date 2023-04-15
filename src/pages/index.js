@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import styles from '@/styles/Home.module.css'
 import StaticInput from '@/components/StaticInput'
 import React, { useEffect, useState, createContext } from 'react'
 import { focusInput, ctrlL } from "@/utils/functions"
@@ -15,6 +14,17 @@ export default function Home() {
     window.addEventListener('mouseup', focusInput)
     window.addEventListener('keydown', (e) => ctrlL(e))
   }, [])
+
+  const styles = {
+    main: {
+      backgroundColor: 'var(--background-dark)',
+      minWidth: 'min(1920px, 100vw)',
+      minHeight: 'min(1080px, 100vh)',
+      maxWidth: 'min(1920px, 100vw)',
+      maxHeight: 'min(1080px, 100vh)',
+      overflowX: 'hidden',
+    }
+  }
 
   // TODO: resume, workexp, tab thing complette, extra command remove
   return (
@@ -35,7 +45,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <ComponentContext.Provider value={{components, setComponents, history, setHistory}}>
-        <div className={styles.main}>
+        <div style={styles.main}>
           <main>
             <Wrapper component={<StaticInput />} />
             {

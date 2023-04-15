@@ -1,4 +1,3 @@
-import styles from "@/styles/Help.module.css"
 import { generateSpaces } from "@/utils/functions"
 
 const Help = () => {
@@ -65,18 +64,36 @@ const Help = () => {
     // },
   ]
 
+  const styles = {
+    list: {
+      fontSize: "1.1em",
+      color: "var(--title-main)",
+    },
+    padded: {
+      padding: "2px 0px"
+    },
+    green: {
+      display: "inline",
+      color: "var(--cursor-color)",
+    },
+    normal: {
+      display: "inline",
+    },
+
+  }
+
   return (
-      <dl className={styles.list}>
+      <dl style={styles.list}>
       <br />
       {
         helper.map((manual, index) => {
           return (
-            <div key={index} className={styles.padd}>
-              <dt className={styles.green}>
+            <div key={index} style={styles.padded}>
+              <dt style={styles.green}>
                 {manual.command}{generateSpaces(manual.tab)}
               </dt>
               -&nbsp;
-              <dd className={styles.normal}>
+              <dd style={styles.normal}>
                 {manual.description}
               </dd>
               <br />

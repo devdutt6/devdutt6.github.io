@@ -1,4 +1,3 @@
-import styles from "@/styles/Welcome.module.css"
 import { NAME, PHOTO } from "@/utils/constants"
 
 const Welcome = () => {
@@ -14,39 +13,56 @@ const Welcome = () => {
     },
   ]
 
+  const styles = {
+    section: {
+      fontSize: '1.1em',
+      display: 'flex',
+      padding: '8px 0px'
+    },
+    line: {
+      padding: '8px 0px',
+    },
+    green: {
+      color: 'var(--cursor-color)',
+    },
+    photo: {
+      fontSize: '15px',
+      display: 'flex',
+      justifyContent: 'space-around',
+      margin: 'auto',
+    }
+  }
+
   return (
-  <>
-    <div className={styles.pre}>
+    <div style={styles.section}>
       <div>
         <pre>
           {NAME}
         </pre>
-        <h1 className={styles.line}>
+        <h1 style={styles.line}>
           {LINES[0].line}
         </h1>
-        <p className={styles.line}>
+        <p style={styles.line}>
           {LINES[1].line}
         </p>
-        <h2 className={styles.line}>
+        <h2 style={styles.line}>
           {LINES[2].line}
         </h2>
         <br />
-        <p className={styles.line}>
+        <p style={styles.line}>
           For the list of available commands, type `
-            <span className={styles.green}>
+            <span style={styles.green}>
               help
             </span>
           `.
         </p>
       </div>
-      <div className={styles.photo}>
+      <div style={styles.photo}>
         <pre>
           {PHOTO}
         </pre>
       </div>
     </div>
-    <br/>
-  </>
   )
 }
 

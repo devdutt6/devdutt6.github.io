@@ -1,32 +1,38 @@
-
-import styles from '@/styles/Invalid.module.css'
-import styles2 from '@/styles/Welcome.module.css'
-
 const Invalid = ({command}) => {
   const PRE =
 `
 \`
 `
+  const styles = {
+    section: {
+      fontSize: '1.1em',
+      padding: "8px 0px",
+    },
+    grey: {
+      padding: "8px 0px",
+      color: 'var(--para-text)'
+    },
+    green: {
+      padding: "8px 0px",
+      color: 'var(--cursor-color)'
+    }
+  }
+
   return (
-    <>
-      <br/>
-      <div className={styles.section}>
-        <span
-        className={styles2.grey + " " + styles2.line}>
-          {command}
-        </span>
-        : command not found,
-        <pre>
-          {PRE}
-        </pre>
-        For the list of available command, type `
-        <span className={styles2.green + " " + styles2.line}>
-          help
-        </span>
-        `.
-      </div>
-      <br/>
-    </>
+    <div style={styles.section}>
+      <span style={styles.grey}>
+        {command}
+      </span>
+      : command not found,
+      <pre>
+        {PRE}
+      </pre>
+      For the list of available command, type `
+      <span style={styles.green}>
+        help
+      </span>
+      `.
+    </div>
   )
 }
 

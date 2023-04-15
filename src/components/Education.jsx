@@ -1,6 +1,3 @@
-import React from "react"
-import styles from "@/styles/Invalid.module.css"
-
 const Education = () => {
   const education = [
     {
@@ -17,25 +14,40 @@ const Education = () => {
     }
   ]
 
+  const styles = {
+    section: {
+      color: "var(--title-main)",
+      fontSize: "1.1em",
+    },
+    group: {
+      padding: "12px 0px",
+      width: "50%",
+    },
+    divide: {
+      display: "flex",
+      justifyContent: "space-between",
+    },
+    title: {
+      fontWeight: "700",
+      color: "var(--tag-high)",
+    },
+  }
+
   return(
     <>
     <br/>
-    <div className={styles.section}>
+    <div style={styles.section}>
       Here is my education background!
       <div>
         {
           education.map((ed, index) => {
             return (
-              <div className={styles.group} key={index}>
-                <div className={styles.divide}>
-                  <p className={styles.title}>
-                    {ed.title}
-                  </p>
-                  <p className={styles.title}>
-                    {ed.grade}
-                  </p>
+              <div style={styles.group} key={index}>
+                <div style={{...styles.divide, ...styles.title}}>
+                  <p style={{color: 'inherit'}}>{ed.title}</p>
+                  <p style={{color: 'inherit'}}>{ed.grade}</p>
                 </div>
-                <div className={styles.divide}>
+                <div style={styles.divide}>
                   <p>{ed.description}</p>
                   <p>{ed.duration}</p>
                 </div>

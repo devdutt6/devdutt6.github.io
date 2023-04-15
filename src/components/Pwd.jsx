@@ -1,17 +1,19 @@
-import styles from "@/styles/Invalid.module.css"
-
 const Pwd = () => {
+  const styles = {
+    section: {
+      fontSize: '1.1em',
+      padding: '8px 0px',
+    },
+    green: {
+      color: 'var(--cursor-color)',
+    }
+  }
   return (
-    <>
-      <br />
-      <div className={styles.section}>
-        <pre>
-          <span className={styles.green}>Path</span><br />
-          <span className={styles.green}>----</span><br />
-          /home/devdutt/portfolio
-        </pre>
-      </div>
-    </>
+    <div style={styles.section}>
+      <span style={styles.green}>Path</span><br />
+      <span style={styles.green}>----</span><br />
+      /home/devdutt/portfolio
+    </div>
   )
 }
 
