@@ -8,9 +8,11 @@ const LabelLine = ({idLabel}) => {
 
   const styles = {
     orange: {
-      color: 'rgb(199, 152, 33)'
+      fontWeight: '700',
+      color: 'var(--orange-color)'
     },
     green: {
+      fontWeight: '700',
       color: 'var(--cursor-color)'
     }
   }
@@ -36,7 +38,9 @@ const Form = ({ defaultValue='', defaultState=false, idLabel }) => {
   let [input, setInput] = useState(defaultValue)
   const [index, setIndex] = useState(0)
 
-  const handelArrow = (e) => {
+  const suggestion = ["about", "education", "projects", "socials", "help", "theme", "welcome", "resume", "pwd", "echo", "clear", "whoami"]
+
+  const handelKeyPress = (e) => {
     if(e.key === 'ArrowUp' || e.key === 'ArrowDown'){
       e.preventDefault()
       if(e.key === 'ArrowDown'){
@@ -53,6 +57,13 @@ const Form = ({ defaultValue='', defaultState=false, idLabel }) => {
       }
       setInput(history[history.length-index-1])
     }
+    else if(e.key === "Tab"){
+      e.preventDefault()
+      let reg = new RegExp(`^${reference.current.value}`, 'i')
+      for(let i=0;i<suggestion.length;i++){
+        if( reg.test(suggestion[i]) ) setInput(suggestion[i])
+      }
+    }
   }
 
   const handleSubmit = (e) => {
@@ -67,11 +78,11 @@ const Form = ({ defaultValue='', defaultState=false, idLabel }) => {
   const handelChange = (e) => setInput(e.target.value)
 
   useEffect(() => {
-    reference.current.addEventListener('keydown', handelArrow)
+    reference.current.addEventListener('keydown', handelKeyPress)
     reference.current.focus()
 
     return () => {
-      reference.current?.removeEventListener('keydown', handelArrow)
+      reference.current?.removeEventListener('keydown', handelKeyPress)
     }
   }, [index])
 

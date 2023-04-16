@@ -5,6 +5,7 @@
   --card-back: #242629;
   --tag-high: #7f5af0;
   --cursor-color: #2cb67d;
+  --orange-color: rgb(199, 152, 33)
 }
 
 ::-webkit-scrollbar {
@@ -23,7 +24,8 @@
   margin: 0;
   /* cursor: none; */
   font-family: 'Ubuntu Mono', monospace;
-  color: var(--title-main)
+  color: var(--title-main);
+  font-weight: '500'
 }
 
 h1, h2 {

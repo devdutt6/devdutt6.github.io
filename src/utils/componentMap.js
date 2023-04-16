@@ -9,6 +9,7 @@ import About from '@/components/About'
 import Social from '@/components/Social'
 import Projects from '@/components/Projects'
 import Wrapper from '@/components/Wrapper'
+import Theme from '@/components/Theme'
 
 const componentMapping = {
   pwd:  <Wrapper component={<Pwd />} />,
@@ -20,6 +21,7 @@ const componentMapping = {
   projects: <Wrapper component={<Projects />} />,
   education: <Wrapper component={<Education />} />,
   whoami: <Wrapper component={<Echo text='visitor'/>} />,
+  theme: <Wrapper component={<Theme />} />
 }
 
 const componentMaper = (textInput) => {

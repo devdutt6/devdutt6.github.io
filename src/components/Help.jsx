@@ -28,10 +28,20 @@ const Help = () => {
       tab: 9
     },
     {
+      command: "theme",
+      description: "toggle between different themes",
+      tab: 8
+    },
+    {
       command: "welcome",
       description: "display hero section",
       tab: 6
     },
+    // {
+    //   command: "resume",
+    //   description: "here is my resume",
+    //   tab: 7
+    // },
     {
       command: "pwd",
       description: "print current working directory",

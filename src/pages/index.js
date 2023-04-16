@@ -9,6 +9,7 @@ export const ComponentContext = createContext()
 export default function Home() {
   const [components, setComponents] = useState([])
   const [history, setHistory] = useState(['welcome'])
+  const [theme, setTheme] = useState(0)
 
   useEffect(() => {
     window.addEventListener('mouseup', focusInput)
@@ -26,7 +27,7 @@ export default function Home() {
     }
   }
 
-  // TODO: resume, workexp, tab thing complette, extra command remove
+  // TODO: resume, workexp, extra command remove
   return (
     <>
       <Head>
@@ -44,7 +45,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.svg" />
       </Head>
-      <ComponentContext.Provider value={{components, setComponents, history, setHistory}}>
+      <ComponentContext.Provider value={{components, setComponents, history, setHistory, theme, setTheme}}>
         <div style={styles.main}>
           <main>
             <Wrapper component={<StaticInput />} />

@@ -9,7 +9,7 @@ const Welcome = () => {
       line: "----"
     },
     {
-      line: "I'm Devdutt Chudasama, a Software developer, a student, and skilled in MERN stack."
+      line: "I'm Devdutt Chudasama, a Software developer and skilled in MERN stack."
     },
   ]
 
