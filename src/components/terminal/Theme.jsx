@@ -1,6 +1,5 @@
-import { useContext, useEffect } from "react";
-import Echo from "./Echo";
-import { ComponentContext } from "../pages/index"
+import { useContext, useEffect } from "react"
+import { ComponentContext } from "@/pages/index"
 
 const Theme = () => {
   const { theme, setTheme } = useContext(ComponentContext)
@@ -75,7 +74,7 @@ const Theme = () => {
     document.documentElement.style.setProperty('--orange-color', themes[theme].orangeColor);
   }, [])
 
-  return (<Echo text={""}/>)
+  return (<span />)
 }
 
 export default Theme;

@@ -1,6 +1,6 @@
 import componentMaper from '@/utils/componentMap'
 import { useContext, useEffect, useState, useRef } from 'react'
-import { ComponentContext } from '../pages/index'
+import { ComponentContext } from '@/pages/index'
 
 const LabelLine = ({idLabel}) => {
   const USER = 'visitor'
@@ -60,8 +60,13 @@ const Form = ({ defaultValue='', defaultState=false, idLabel }) => {
     else if(e.key === "Tab"){
       e.preventDefault()
       let reg = new RegExp(`^${reference.current.value}`, 'i')
-      for(let i=0;i<suggestion.length;i++){
-        if( reg.test(suggestion[i]) ) setInput(suggestion[i])
+      if(reference.current.value?.length > 0){
+        for(let i=0;i<suggestion.length;i++){
+          if( reg.test(suggestion[i]) ) {
+            setInput(suggestion[i])
+            return;
+          }
+        }
       }
     }
   }
@@ -70,7 +75,10 @@ const Form = ({ defaultValue='', defaultState=false, idLabel }) => {
     e.preventDefault()
     input = input.trim()
     if (input.length == 0) return
-    setHistory(hist => [...hist, input])
+    setHistory(hist => {
+      let histSet = new Set([...hist, input]);
+      return Array.from(histSet);
+    })
     setSubmitted(true)
     setComponents([...components, componentMaper(input)])
   }

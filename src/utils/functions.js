@@ -32,3 +32,10 @@ export const generateSpaces = (spaces) => {
   for(let i=0;i<spaces;i++) space += "\xA0"
   return space
 }
+
+export const openResume = () => {
+  window.open('https://drive.google.com/file/d/1_wdSkWYvnzHetMy8LJ9Qe7IP8W8ai4Up/view?usp=sharing', '_blank');
+}
+
+export const emptyElement = () => (<span></span>)
+export const emptyFunction = () => {}
