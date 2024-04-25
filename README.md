@@ -1,38 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Devdutt's Terminal Portfolio
 
-## Getting Started
+![Preview Image to my terminal portfolio](https://cdn.discordapp.com/attachments/1065133521166942320/1232954231984492574/image.png?ex=662b559c&is=662a041c&hm=e52e8d5b890e66cdf275138536287bc8a0464b963cb6b75d74c8589f609a18f2&)
 
-First, run the development server:
+This is my Portfolio website disguised as a Terminal, Hi and welcome to my [Terminal portfolio](https://devdutt6-github-io.vercel.app) project. I'm Devdutt Chudasama a Software Developer From Gujarat, India. Having experience and expertise in MERN stack.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technology
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+This project is built using **Next.js** in old page route structure. With **no-extra dependency** then the project next.js bundled with, not even Tailwind which is my favorite way of styling.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Features
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+The terminal accepts various commands like `help`, `welcome`, `about` etc.(# Note Use the `help` command to list out all the acceptable commands)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+It also has the **autocomplete** feature which will help you autocomplete the commands.
 
-## Learn More
+[To use autocomplete write 1 or 2 characters and press tab]
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This terminal also has support for well-known keyboard short-cuts like <kbd>ctrl + l</kbd>, <kbd>&#8593; Up arrow</kbd>, <kbd>&#8595; Down arrow</kbd> to navigate in history.
+I would insist trying out the `theme` command there are many themes I integrated in this terminal.
